@@ -1,7 +1,13 @@
 # New repo setup
 
+## General
+
+* For secrets, use environment variables in a .env file; maintain a set of default values in .env.sample
+
 ## Python projects
+
 ### Setup
+
 * Use `uv` for package management; `uv venv` to set up a virtualenv
 * After `uv init` be sure to remove `hello.py` cruft
 * Always start by installing `rust-just` for project-specific commands and `pytest` for testing
@@ -12,6 +18,7 @@
   * `build` - creates assets, e.g. for a static site generator
  
 ### General usage
+
 * For new functionality, write tests first, and confirm they fail as expected
 * For new bugs, also write tests first
 * Tests should be specific, named imperatively, and be arranged for legibility. For example, not too many tests in a module; each test should be a few lines long unless it's a smoketest or similar; fixtures should also be legible
