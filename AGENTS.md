@@ -26,3 +26,4 @@
 * Tests should be specific, named imperatively, and be arranged for legibility. For example, not too many tests in a module; each test should be a few lines long unless it's a smoketest or similar; fixtures should also be legible
 * If there's more than one good way to approach writing a feature, ask me for my preference
 * Do not write code which has fallbacks or other default values, unless asked. For example, never do bare excepts. As an example, if keys are missing in dicts, then allow the exception to propagate. In general, ALWAYS fail noisily, to maximise the amount of information available at runtime for debugging problems
+* In general, don't use typing. Only use it when there's a clear and obvious justification.
