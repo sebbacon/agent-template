@@ -4,7 +4,8 @@
 
 * For secrets, use environment variables in a .env file; maintain a set of default values in .env.sample
 
-## Python projects
+
+## Python projects
 
 ### Setup
 
@@ -16,7 +17,8 @@
   * `test` - runs tests
   * `dev` - starts up any servers in dev mode (e.g. with auto reloading)
   * `build` - creates assets, e.g. for a static site generator
- 
+*  Manage all one-off commands via just
+  
 ### General usage
 
 * For new functionality, write tests first, and confirm they fail as expected
