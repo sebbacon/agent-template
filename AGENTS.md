@@ -2,7 +2,7 @@
 
 ## General
 
-* For secrets, use environment variables in a .env file; maintain a set of default values in .env.sample
+* For secrets, use environment variables in a .env file; maintain a set of default values in .env.sample, and raising ImproperlyConfigured when production secrets are absent to fail fast
 * You have access to github's `gh` cli tool. Use it for repo management and configuration, and anything else you might need it for, but always ask before any operations that might write to github
 
 ## Python projects
@@ -17,7 +17,12 @@
   * `test` - runs tests
   * `dev` - starts up any servers in dev mode (e.g. with auto reloading)
   * `build` - creates assets, e.g. for a static site generator
-*  Manage all one-off commands via just
+  * `covereage` - run coverage tests
+*  Manage all one-off commands via just, unless using Django, when these should be management commands (where appropriate)
+
+### When using Django
+* Make use of htmx for buttery transitions, where appropriate
+* Load settings from env vars, reading a local .env for dev and raising ImproperlyConfigured when production secrets are absent to fail fast
   
 ### General usage
 
@@ -29,3 +34,4 @@
 * Do not write code which has fallbacks or other default values, unless asked. For example, never do bare excepts. As an example, if keys are missing in dicts, then allow the exception to propagate. In general, ALWAYS fail noisily, to maximise the amount of information available at runtime for debugging problems
 * In general, don't use typing. Only use it when there's a clear and obvious justification.
 * When writing code against things that are hard to test, such as third party APIs, also write smoketests that excercise an entire flow, using live tokens, and use them in debugging loops. However, exercise extreme caution about any test operations that might write to a production service; always stop and ask what you should do first, including suggesting obtaining read-only PATs for such tests (if possible)
+* When adding code, run `just coverage` to check the coverage. Always aim to have 100% coverage.
