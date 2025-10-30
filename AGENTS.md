@@ -23,7 +23,9 @@
 
 * For new functionality, write tests first, and confirm they fail as expected
 * For new bugs, also write tests first
+* When investigating bugs, consider temporarily adding debug print statements to help you track problems 
 * Tests should be specific, named imperatively, and be arranged for legibility. For example, not too many tests in a module; each test should be a few lines long unless it's a smoketest or similar; fixtures should also be legible
 * If there's more than one good way to approach writing a feature, ask me for my preference
 * Do not write code which has fallbacks or other default values, unless asked. For example, never do bare excepts. As an example, if keys are missing in dicts, then allow the exception to propagate. In general, ALWAYS fail noisily, to maximise the amount of information available at runtime for debugging problems
 * In general, don't use typing. Only use it when there's a clear and obvious justification.
+* When writing code against things that are hard to test, such as third party APIs, also write smoketests that excercise an entire flow, using live tokens, and use them in debugging loops. However, exercise extreme caution about any test operations that might write to a production service; always stop and ask what you should do first, including suggesting obtaining read-only PATs for such tests (if possible)
