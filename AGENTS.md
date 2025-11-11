@@ -4,6 +4,7 @@
 
 * For secrets, use environment variables in a .env file; maintain a set of default values in .env.sample, and raising ImproperlyConfigured when production secrets are absent to fail fast
 * You have access to github's `gh` cli tool. Use it for repo management and configuration, and anything else you might need it for, but always ask before any operations that might write to github
+* Propose git commits (and messages) at sensible checkpoints
 * Treat warnings as failures when encountered in test outputs, and fix them
 
 
